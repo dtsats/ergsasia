@@ -1,0 +1,381 @@
+/* ====== Βασικές Ρυθμίσεις ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: #2c2c2c;
+  background: #fafafa;
+  line-height: 1.7;
+}
+
+/* Κεντρικός container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====== Header ====== */
+.header {
+  background: white;
+  padding: 18px 0;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo img {
+  height: 85px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #0d47a1;
+  transform: translateY(-2px);
+}
+
+/* ====== Hero Slider ====== */
+.hero-slider {
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-slider input {
+  display: none;
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.slide-1 {
+  background-image: url('Shopi-Fail2.png');
+}
+
+.slide-2 {
+  background-image: url('Shopi-Fail3.png');
+}
+
+.slide-3 {
+  background-image: url('Shopi-Fail4.png');
+}
+
+#slide1:checked ~ .slides .slide-1,
+#slide2:checked ~ .slides .slide-2,
+#slide3:checked ~ .slides .slide-3 {
+  opacity: 1;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  background: #0d47a1;
+  padding: 12px 30px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #09357b;
+  transform: translateY(-3px);
+}
+
+/* Βελάκια */
+.arrows {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  background: rgba(255,255,255,0.18);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  line-height: 43px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.arrow.left {
+  left: 25px;
+}
+
+.arrow.right {
+  right: 25px;
+}
+
+#slide1:checked ~ .arrows-1,
+#slide2:checked ~ .arrows-2,
+#slide3:checked ~ .arrows-3 {
+  display: block;
+}
+
+/* ====== Sections ====== */
+.section {
+  padding: 80px 0;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 25px;
+  color: #0d47a1;
+}
+
+.section p {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* ====== Services ====== */
+.bg-light {
+  background: #f0f4ff;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.service-box {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  transition: 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.service-box h3 {
+  color: #0d47a1;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.service-box p {
+  color: #666;
+}
+
+/* ====== Contact ====== */
+.contact-info {
+  list-style: none;
+  text-align: center;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.contact-info li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+/* ====== Footer ====== */
+.footer {
+  background: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 0.95rem;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 65px;
+  }
+}
+/* ====== Product Images (square, no crop) ====== */
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.best-slider {
+  position: relative;
+  max-width: 420px;
+  margin: 40px auto 0;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+.best-slider input {
+  display: none;
+}
+
+.best-slide {
+  display: none;
+}
+
+.best-slide img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.best-slide h3 {
+  color: #0d47a1;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.best-slide p {
+  color: #666;
+}
+
+#best1:checked ~ .best-slides .best-slide-1,
+#best2:checked ~ .best-slides .best-slide-2,
+#best3:checked ~ .best-slides .best-slide-3,
+#best4:checked ~ .best-slides .best-slide-4,
+#best5:checked ~ .best-slides .best-slide-5 {
+  display: block;
+}
+
+.best-arrows {
+  display: none;
+}
+
+.best-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #0d47a1;
+  background: rgba(13,71,161,0.08);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  line-height: 37px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+.best-arrow:hover {
+  background: rgba(13,71,161,0.18);
+}
+
+.best-arrow.left {
+  left: 15px;
+}
+
+.best-arrow.right {
+  right: 15px;
+}
+
+#best1:checked ~ .best-arrows-1,
+#best2:checked ~ .best-arrows-2,
+#best3:checked ~ .best-arrows-3,
+#best4:checked ~ .best-arrows-4,
+#best5:checked ~ .best-arrows-5 {
+  display: block;
+}
